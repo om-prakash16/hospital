@@ -9,7 +9,7 @@ import './theme4.css'
 
 export default function Page() {
   return (
-    <main className="min-h-screen bg-background smooth-gradient">
+    <main className="min-h-screen bg-background text-foreground">
       <Header />
       <Hero />
       <Features />
