@@ -1,0 +1,98 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-secondary: var(--secondary);
+  --color-accent: var(--accent);
+  --color-danger: var(--danger);
+  --color-surface: var(--surface);
+  --color-text-dark: var(--text-dark);
+  --color-text-muted: var(--text-muted);
+  --color-background: var(--background);
+  --color-border: var(--border);
+
+  --font-sans: var(--font-poppins), system-ui, sans-serif;
+  
+  --shadow-card: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
+  --shadow-hover: 0 10px 30px -5px rgba(0, 0, 0, 0.08);
+}
+
+/* 1. Medicare Blue (Default) */
+:root, [data-theme="medicare"] {
+  --primary: #0056D2;
+  --primary-hover: #0044A8;
+  --secondary: #0A7B6B;
+  --accent: #22C55E;
+  --danger: #EF4444;
+  --surface: #F8FAFC;
+  --text-dark: #1E293B;
+  --text-muted: #64748B;
+  --background: #ffffff;
+  --border: #E2E8F0;
+}
+
+/* 2. Sinai Teal (Eye-Catching Vibrant) */
+[data-theme="teal"] {
+  --primary: #0d9488;
+  --primary-hover: #0f766e;
+  --secondary: #0284c7;
+  --accent: #10b981;
+  --danger: #f43f5e;
+  --surface: #f0fdfa;
+  --text-dark: #134e4a;
+  --text-muted: #5eead4; /* Wait, text-muted should be darker for readability on light bg */
+  --text-muted: #0f766e; 
+  --background: #ffffff;
+  --border: #ccfbf1;
+}
+
+/* 3. Fortis Emerald (Trust & Growth) */
+[data-theme="emerald"] {
+  --primary: #059669;
+  --primary-hover: #047857;
+  --secondary: #4f46e5;
+  --accent: #14b8a6;
+  --danger: #e11d48;
+  --surface: #ecfdf5;
+  --text-dark: #064e3b;
+  --text-muted: #34d399;
+  --text-muted: #047857;
+  --background: #ffffff;
+  --border: #d1fae5;
+}
+
+/* 4. Apollo Sunset (Warm & Caring) */
+[data-theme="sunset"] {
+  --primary: #ea580c;
+  --primary-hover: #c2410c;
+  --secondary: #eab308;
+  --accent: #84cc16;
+  --danger: #dc2626;
+  --surface: #fff7ed;
+  --text-dark: #431407;
+  --text-muted: #9a3412;
+  --background: #ffffff;
+  --border: #ffedd5;
+}
+
+/* 5. Premium Dark Mode (Luxury/Enterprise) */
+[data-theme="dark"] {
+  --primary: #3b82f6;
+  --primary-hover: #60a5fa;
+  --secondary: #14b8a6;
+  --accent: #22c55e;
+  --danger: #ef4444;
+  --surface: #0f172a;
+  --text-dark: #f8fafc;
+  --text-muted: #94a3b8;
+  --background: #020617;
+  --border: #1e293b;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--text-dark);
+  font-family: var(--font-poppins), sans-serif;
+}
+
