@@ -40,9 +40,9 @@ export function Header() {
 
           {/* Desktop CTA */}
           <div className="hidden items-center gap-4 md:flex">
-            <button className="rounded-full bg-gradient-to-r from-primary to-secondary px-6 py-2.5 text-sm font-semibold text-white shadow-lg transition-all duration-300 hover:shadow-2xl hover:scale-105 hover:from-accent hover:to-primary">
-              Get a Demo
-            </button>
+            <Link href="/book" className="rounded-full bg-gradient-to-r from-primary to-secondary px-6 py-2.5 text-sm font-semibold text-white shadow-lg transition-all duration-300 hover:shadow-2xl hover:scale-105 hover:from-accent hover:to-primary">
+              Book Now
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -67,9 +67,9 @@ export function Header() {
                 {item.label}
               </Link>
             ))}
-            <button className="w-full rounded-full bg-gradient-to-r from-primary to-secondary px-6 py-2.5 text-sm font-semibold text-white shadow-lg hover:shadow-2xl transition-all">
-              Get a Demo
-            </button>
+            <Link href="/book" className="block text-center w-full rounded-full bg-gradient-to-r from-primary to-secondary px-6 py-2.5 text-sm font-semibold text-white shadow-lg hover:shadow-2xl transition-all">
+              Book Now
+            </Link>
           </div>
         )}
       </div>

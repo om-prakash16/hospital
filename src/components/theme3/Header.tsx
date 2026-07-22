@@ -7,10 +7,10 @@ export default function Header() {
         <div className="container mx-auto px-4 flex justify-between items-center">
           
           {/* Brand */}
-        <Link href="/theme3" className="flex items-center gap-2 text-[#0284c7]">
+        <Link href="/theme3" className="flex items-center gap-2 text-white">
           <div className="flex flex-col">
             <span className="font-bold text-xl leading-tight">SHUBHAM HOSPITAL</span>
-            <span className="font-semibold text-xs tracking-wider uppercase text-[#38bdf8]">Dr. Ashok Gupta, Rohini</span>
+            <span className="font-semibold text-xs tracking-wider uppercase text-blue-100">Dr. Ashok Gupta, Rohini</span>
           </div>
         </Link>
 
@@ -24,9 +24,9 @@ export default function Header() {
             <li><Link href="#" className="text-[#f5f6ff] hover:text-white font-medium transition-colors">Solutions</Link></li>
           </ul>
 
-          <button className="hidden lg:block bg-[#f5f6ff] text-[#0ea5e9] px-6 py-2.5 rounded-lg font-medium hover:-translate-y-0.5 transition-transform duration-300">
+          <Link href="/book" className="hidden lg:block bg-[#f5f6ff] text-[#0ea5e9] px-6 py-2.5 rounded-lg font-medium hover:-translate-y-0.5 transition-transform duration-300">
             Book Now
-          </button>
+          </Link>
 
           {/* Mobile Menu Button */}
           <button className="lg:hidden text-white focus:outline-none">

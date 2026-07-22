@@ -30,9 +30,9 @@ export default function Header() {
 
           {/* CTA */}
           <div className="hidden md:flex items-center gap-3">
-            <button className="bg-[#FF8D6D] text-white px-6 py-2.5 rounded-full font-medium hover:bg-orange-500 transition-colors">
-              Get a Demo
-            </button>
+            <Link href="/book" className="bg-[#FF8D6D] text-white px-6 py-2.5 rounded-full font-medium hover:bg-orange-500 transition-colors">
+              Book Now
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -57,9 +57,9 @@ export default function Header() {
             <Link href="#pricing" className="block px-3 py-2 text-gray-900 font-semibold">Pricing</Link>
             <Link href="#faq" className="block px-3 py-2 text-gray-900 font-semibold">Faq</Link>
             <div className="mt-4 px-3">
-              <button className="w-full bg-[#FF8D6D] text-white px-6 py-2.5 rounded-full font-medium">
-                Get a Demo
-              </button>
+              <Link href="/book" className="block text-center w-full bg-[#FF8D6D] text-white px-6 py-2.5 rounded-full font-medium">
+                Book Now
+              </Link>
             </div>
           </div>
         </div>
