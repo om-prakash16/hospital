@@ -1,4 +1,7 @@
+'use client';
+
 import { Search, ChevronDown, Star, MapPin } from 'lucide-react';
+import Image from 'next/image';
 
 const doctors = [
   {
@@ -8,7 +11,7 @@ const doctors = [
     experience: '15+ Years Exp.',
     rating: 4.9,
     hospital: 'MAX Hospital, Delhi',
-    image: 'bg-slate-200'
+    image: 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=400&q=80'
   },
   {
     id: 2,
@@ -17,7 +20,7 @@ const doctors = [
     experience: '12+ Years Exp.',
     rating: 4.8,
     hospital: 'Fortis, Mumbai',
-    image: 'bg-slate-200'
+    image: 'https://images.unsplash.com/photo-1594824432256-42795b651030?auto=format&fit=crop&w=400&q=80'
   },
   {
     id: 3,
@@ -26,7 +29,7 @@ const doctors = [
     experience: '10+ Years Exp.',
     rating: 4.9,
     hospital: 'Manipal Hospital, Bangalore',
-    image: 'bg-slate-200'
+    image: 'https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=400&q=80'
   },
   {
     id: 4,
@@ -35,13 +38,13 @@ const doctors = [
     experience: '14+ Years Exp.',
     rating: 4.9,
     hospital: 'Apollo Hospital, Chennai',
-    image: 'bg-slate-200'
+    image: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=400&q=80'
   }
 ];
 
 export default function DoctorFinder() {
   return (
-    <section className="py-16 bg-[var(--color-surface)]">
+    <section className="py-16 bg-[var(--color-surface)] transition-colors duration-400">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header & Search Bar */}
@@ -58,10 +61,14 @@ export default function DoctorFinder() {
                 <input 
                   type="text" 
                   placeholder="Search by name, specialty or symptom..." 
-                  className="w-full pl-10 pr-4 py-3 rounded-md border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)] text-sm"
+                  className="w-full pl-10 pr-4 py-3 border border-[var(--color-border)] focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)] text-sm"
+                  style={{ borderRadius: 'var(--radius-md)' }}
                 />
               </div>
-              <button className="bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] text-white px-6 py-3 rounded-md font-medium transition-colors whitespace-nowrap">
+              <button 
+                className="bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] text-white px-6 py-3 font-medium transition-colors whitespace-nowrap"
+                style={{ borderRadius: 'var(--radius-md)' }}
+              >
                 Search
               </button>
             </div>
@@ -69,7 +76,11 @@ export default function DoctorFinder() {
             {/* Filters */}
             <div className="flex gap-3 mt-3 overflow-x-auto pb-2 no-scrollbar">
               {['All Specialties', 'All Locations', 'All Experience', 'All Languages'].map((filter, i) => (
-                <button key={i} className="flex items-center gap-2 bg-white border border-gray-200 px-4 py-2 rounded-md text-sm text-[var(--color-text-muted)] hover:border-gray-300 whitespace-nowrap">
+                <button 
+                  key={i} 
+                  className="flex items-center gap-2 bg-white border border-[var(--color-border)] px-4 py-2 text-sm text-[var(--color-text-muted)] hover:border-gray-300 whitespace-nowrap"
+                  style={{ borderRadius: 'var(--radius-md)' }}
+                >
                   {filter} <ChevronDown className="w-4 h-4" />
                 </button>
               ))}
@@ -80,17 +91,26 @@ export default function DoctorFinder() {
         {/* Doctor Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {doctors.map((doc) => (
-            <div key={doc.id} className="bg-white border border-gray-100 rounded-xl overflow-hidden hover:shadow-[var(--shadow-hover)] transition-shadow">
-              <div className={`w-full h-56 ${doc.image} relative flex justify-center items-end overflow-hidden`}>
-                {/* Placeholder for actual photo */}
-                <div className="text-slate-400 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">[Photo]</div>
+            <div 
+              key={doc.id} 
+              className="bg-[var(--color-background)] border border-[var(--color-border)] overflow-hidden transition-all duration-300"
+              style={{ borderRadius: 'var(--radius-lg)', boxShadow: 'var(--shadow-card)' }}
+              onMouseEnter={(e) => e.currentTarget.style.boxShadow = 'var(--shadow-hover)'}
+              onMouseLeave={(e) => e.currentTarget.style.boxShadow = 'var(--shadow-card)'}
+            >
+              <div className="w-full h-64 relative overflow-hidden bg-slate-100">
+                <img 
+                  src={doc.image} 
+                  alt={doc.name} 
+                  className="w-full h-full object-cover object-top"
+                />
               </div>
               
               <div className="p-5">
                 <h3 className="text-lg font-bold text-[var(--color-text-dark)]">{doc.name}</h3>
                 <p className="text-sm text-[var(--color-primary)] font-medium mb-3">{doc.specialty}</p>
                 
-                <div className="flex justify-between items-center text-sm text-[var(--color-text-muted)] mb-3 pb-3 border-b border-gray-100">
+                <div className="flex justify-between items-center text-sm text-[var(--color-text-muted)] mb-3 pb-3 border-b border-[var(--color-border)]">
                   <span>{doc.experience}</span>
                   <div className="flex items-center gap-1 text-amber-500 font-medium">
                     <Star className="w-4 h-4 fill-current" /> {doc.rating}
@@ -98,11 +118,14 @@ export default function DoctorFinder() {
                 </div>
                 
                 <div className="flex items-start gap-2 text-xs text-[var(--color-text-muted)] mb-5">
-                  <MapPin className="w-4 h-4 shrink-0 text-gray-400" />
+                  <MapPin className="w-4 h-4 shrink-0 opacity-70" />
                   <span>{doc.hospital}</span>
                 </div>
                 
-                <button className="w-full bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] text-white py-2.5 rounded-md text-sm font-medium transition-colors">
+                <button 
+                  className="w-full bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] text-white py-2.5 text-sm font-medium transition-colors"
+                  style={{ borderRadius: 'var(--radius-md)' }}
+                >
                   Book Now
                 </button>
               </div>

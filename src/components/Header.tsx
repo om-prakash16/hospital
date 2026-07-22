@@ -1,53 +1,50 @@
 import Link from 'next/link';
-import { Search, ChevronDown, PlusSquare } from 'lucide-react';
-import ThemeSwitcher from './ThemeSwitcher';
+import { Search, ChevronDown } from 'lucide-react';
 
 export default function Header() {
   return (
-    <header className="sticky top-0 z-50 w-full bg-white border-b border-[var(--color-border)] shadow-sm">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-        {/* Logo */}
-        <div className="flex items-center gap-3">
-          <div className="w-9 h-9 bg-white border-2 border-[var(--color-primary)] rounded-lg flex items-center justify-center text-[var(--color-primary)] font-bold">
-            <PlusSquare size={22} className="fill-current text-[var(--color-primary)]" />
-          </div>
-          <div className="flex flex-col">
-            <span className="text-2xl font-bold text-[#1E3A8A] tracking-tight leading-none">Medicare+</span>
-            <span className="text-[10px] text-gray-500 font-medium tracking-widest mt-1 uppercase">Care That Cares</span>
-          </div>
-        </div>
-
-        {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-8 h-full">
-          <Link href="/" className="text-sm font-bold text-[#1E3A8A]">Home</Link>
-          <div className="relative h-full flex items-center">
-            <Link href="/doctors" className="text-sm font-bold text-[var(--color-primary)]">Doctors</Link>
-            <div className="absolute bottom-0 left-0 w-full h-1 bg-[var(--color-primary)] rounded-t-md"></div>
-          </div>
-          <Link href="/departments" className="text-sm font-bold text-[#1E3A8A] hover:text-[var(--color-primary)] transition-colors">Departments</Link>
-          <Link href="/services" className="text-sm font-bold text-[#1E3A8A] hover:text-[var(--color-primary)] transition-colors">Services</Link>
-          <Link href="/patients" className="text-sm font-bold text-[#1E3A8A] hover:text-[var(--color-primary)] transition-colors">Patients</Link>
-          <Link href="/about" className="text-sm font-bold text-[#1E3A8A] hover:text-[var(--color-primary)] transition-colors">About Us</Link>
-          <Link href="/contact" className="text-sm font-bold text-[#1E3A8A] hover:text-[var(--color-primary)] transition-colors">Contact</Link>
-        </nav>
-
-        {/* Right Actions */}
-        <div className="flex items-center gap-6">
-          <ThemeSwitcher />
+    <nav className="bg-white sticky top-0 z-50">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-[90px]">
           
-          <button className="text-[var(--color-text-muted)] hover:text-[var(--color-primary)] transition-colors">
-            <Search size={20} />
-          </button>
-          
-          <div className="hidden sm:flex items-center gap-1 cursor-pointer text-[var(--color-text-dark)] font-medium text-sm">
-            EN <ChevronDown size={16} />
+          {/* Logo Section */}
+          <Link href="/" className="flex items-center gap-3">
+            <div className="flex flex-col">
+              <span className="font-bold text-xl leading-tight text-[#0F2D5E]">SHUBHAM HOSPITAL</span>
+              <span className="font-semibold text-xs tracking-wider uppercase text-[#297AFF]">Dr. Ashok Gupta, Rohini</span>
+            </div>
+          </Link>
+
+          {/* Desktop Nav */}
+          <div className="hidden lg:flex items-center justify-center flex-1 space-x-10 pl-8">
+            <Link href="/" className="text-[15px] font-bold text-[#008B8B]">Home</Link>
+            <Link href="#doctors" className="text-[15px] font-semibold text-[#102A43] hover:text-[#008B8B] transition-colors">Doctors</Link>
+            <Link href="#departments" className="text-[15px] font-semibold text-[#102A43] hover:text-[#008B8B] transition-colors">Departments</Link>
+            <Link href="#services" className="text-[15px] font-semibold text-[#102A43] hover:text-[#008B8B] transition-colors">Services</Link>
+            <Link href="#patients" className="text-[15px] font-semibold text-[#102A43] hover:text-[#008B8B] transition-colors">Patients</Link>
+            <Link href="#about" className="text-[15px] font-semibold text-[#102A43] hover:text-[#008B8B] transition-colors">About Us</Link>
+            <Link href="#contact" className="text-[15px] font-semibold text-[#102A43] hover:text-[#008B8B] transition-colors">Contact</Link>
           </div>
 
-          <button className="bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] text-white text-sm font-medium px-6 py-2.5 rounded-md transition-colors shadow-sm">
-            Book Appointment
-          </button>
+          {/* Right Actions */}
+          <div className="hidden md:flex items-center space-x-6">
+            <button className="text-[#102A43] hover:text-[#008B8B] transition-colors">
+              <Search size={18} strokeWidth={2.5} />
+            </button>
+            <div className="flex items-center gap-1 cursor-pointer text-[#102A43] hover:text-[#008B8B] font-bold text-[15px]">
+              <span>EN</span>
+              <ChevronDown size={14} strokeWidth={3} />
+            </div>
+            <Link 
+              href="#" 
+              className="bg-[#008B8B] text-white px-6 py-2.5 rounded-md text-[15px] font-semibold hover:bg-teal-700 transition-colors"
+            >
+              Book Appointment
+            </Link>
+          </div>
+
         </div>
       </div>
-    </header>
+    </nav>
   );
 }

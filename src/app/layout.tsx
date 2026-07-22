@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -9,9 +11,11 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Medicare+ Hospital",
-  description: "World-class medical care with compassion.",
+  title: "Terapia - Physical Therapy",
+  description: "World-class physiotherapy and rehabilitation.",
 };
+
+import ConditionalLayout from "@/components/ConditionalLayout";
 
 export default function RootLayout({
   children,
@@ -20,8 +24,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${poppins.variable} font-sans antialiased min-h-screen flex flex-col bg-slate-50 text-slate-800`}>
-        {children}
+      <body
+        className={`${poppins.variable} antialiased min-h-screen flex flex-col`}
+      >
+        <ConditionalLayout>
+          {children}
+        </ConditionalLayout>
       </body>
     </html>
   );

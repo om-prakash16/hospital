@@ -1,19 +1,38 @@
-import Header from '@/components/Header';
 import Hero from '@/components/Hero';
-import MedicalDepartments from '@/components/MedicalDepartments';
-import DoctorFinder from '@/components/DoctorFinder';
+import Clients from '@/components/Clients';
+import Features from '@/components/Features';
+import WhyChooseUs from '@/components/WhyChooseUs';
+import OurLocations from '@/components/OurLocations';
+import Testimonials from '@/components/Testimonial';
+import NewsletterCTA from '@/components/NewsletterCTA';
 
 export default function Home() {
   return (
-    <>
-      <Header />
-      <main className="flex min-h-screen flex-col w-full">
-        <Hero />
-        <MedicalDepartments />
-        <DoctorFinder />
-        {/* Placeholder for future sections */}
-        <div className="h-20 bg-slate-50"></div>
-      </main>
-    </>
+    <main className="flex min-h-screen flex-col w-full bg-white">
+      <Hero />
+      <Clients />
+      <Features />
+      
+      {/* 
+        Temporary placeholders for remaining sections 
+        that we will soon overhaul to match MediCloud
+      */}
+      
+      <div id="howItWork">
+        <WhyChooseUs />
+      </div>
+      
+      <div id="testimonials">
+        <Testimonials />
+      </div>
+      
+      <div id="locations">
+        <OurLocations />
+      </div>
+      
+      <div id="newsletter">
+        <NewsletterCTA />
+      </div>
+    </main>
   );
 }

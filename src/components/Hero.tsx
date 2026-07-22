@@ -1,114 +1,170 @@
-import { Calendar, Search, Video, Phone, Activity, Heart, Shield, Award, Users, MapPin } from 'lucide-react';
+import { ShieldCheck, CalendarCheck, Search, Phone, Video, Pill, FlaskConical, ChevronRight, User, Award, Stethoscope, Users } from 'lucide-react';
+import Link from 'next/link';
 
 export default function Hero() {
   return (
-    <div className="relative w-full bg-[var(--color-surface)] overflow-hidden">
-      {/* Background Decor */}
-      <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-bl from-blue-50 to-transparent rounded-bl-full pointer-events-none" />
-      
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative pt-16 pb-24">
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
+    <div className="relative w-full overflow-hidden bg-white pt-16 pb-28">
+      {/* Background Curved Shape (Right Side) - Matches the huge sweeping light blue/grey curve */}
+      <div className="absolute top-0 right-0 w-[55%] h-full overflow-hidden -z-20">
+        <div className="absolute top-[-10%] right-[-10%] w-[120%] h-[120%] bg-[#F4F8FA] rounded-bl-[100px] transform skew-x-[-15deg]"></div>
+      </div>
+
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="flex flex-col lg:flex-row items-center">
           
-          {/* Left Content */}
-          <div className="lg:w-1/2 flex flex-col gap-6 z-10">
-            <div className="flex items-center gap-2 bg-white px-4 py-2 rounded-full w-fit shadow-sm border border-gray-100">
-              <Shield className="text-[var(--color-secondary)] w-4 h-4" />
-              <span className="text-sm font-medium text-[var(--color-text-dark)]">Trusted by 2M+ Patients</span>
-            </div>
+          {/* Left Content Area */}
+          <div className="w-full lg:w-[45%] flex flex-col z-10 mt-8">
             
-            <h1 className="text-5xl lg:text-6xl font-bold text-[var(--color-text-dark)] leading-[1.15] tracking-tight">
-              Compassionate Care <br />
-              <span className="text-[var(--color-primary)]">For a Healthier You</span>
+            {/* Trusted Pill */}
+            <div className="inline-flex items-center gap-2 bg-[#F4F8FA] text-[#008B8B] px-4 py-1.5 rounded-full text-xs font-bold tracking-wide mb-10 border border-[#E0ECEE] self-start shadow-sm">
+              <ShieldCheck size={14} strokeWidth={2.5} />
+              <span>Trusted by 2M+ Patients</span>
+            </div>
+
+            {/* Headline */}
+            <h1 className="text-[52px] lg:text-[64px] font-extrabold text-[#102A43] leading-[1.1] mb-6 tracking-tight">
+              Compassionate <br/>
+              Care <br/>
+              For a <span className="text-[#008B8B]">Healthier You</span>
             </h1>
-            
-            <p className="text-lg text-[var(--color-text-muted)] leading-relaxed max-w-lg">
-              World-class healthcare with advanced technology and a team of expert doctors dedicated to your well-being.
+
+            {/* Subtext */}
+            <p className="text-[17px] text-slate-500 mb-10 max-w-[420px] leading-[1.7]">
+              We combine advanced technology with expert care to
+              deliver the best treatment for you and your family.
             </p>
+
+            {/* Buttons */}
+            <div className="flex flex-wrap items-center gap-5 mb-20">
+              <Link 
+                href="#" 
+                className="flex items-center justify-center gap-2 bg-[#009688] text-white px-7 py-3.5 rounded-[5px] text-[15px] font-semibold hover:bg-teal-700 transition-colors shadow-lg shadow-teal-900/10"
+              >
+                <CalendarCheck size={18} strokeWidth={2.5} />
+                <span>Book Appointment</span>
+              </Link>
+              <Link 
+                href="#" 
+                className="flex items-center justify-center gap-2 bg-white text-[#009688] border-[1.5px] border-[#009688] px-7 py-3.5 rounded-[5px] text-[15px] font-semibold hover:bg-slate-50 transition-colors shadow-sm"
+              >
+                <Search size={18} strokeWidth={2.5} />
+                <span>Find a Doctor</span>
+              </Link>
+            </div>
+
+            {/* Stats Row */}
+            <div className="flex items-center justify-between gap-4 max-w-[450px]">
+              <div className="flex flex-col">
+                <div className="flex items-center gap-2 text-[#008B8B] mb-0.5">
+                  <Award size={18} strokeWidth={2.5} />
+                  <span className="text-[22px] font-extrabold text-[#102A43]">25+</span>
+                </div>
+                <span className="text-[11px] text-slate-500 font-bold tracking-wide ml-[26px]">Years of Excellence</span>
+              </div>
+              
+              <div className="flex flex-col">
+                <div className="flex items-center gap-2 text-[#008B8B] mb-0.5">
+                  <Stethoscope size={18} strokeWidth={2.5} />
+                  <span className="text-[22px] font-extrabold text-[#102A43]">1500+</span>
+                </div>
+                <span className="text-[11px] text-slate-500 font-bold tracking-wide ml-[26px]">Expert Doctors</span>
+              </div>
+              
+              <div className="flex flex-col">
+                <div className="flex items-center gap-2 text-[#008B8B] mb-0.5">
+                  <Phone size={18} strokeWidth={2.5} />
+                  <span className="text-[22px] font-extrabold text-[#102A43]">20+</span>
+                </div>
+                <span className="text-[11px] text-slate-500 font-bold tracking-wide ml-[26px]">Specialties</span>
+              </div>
+              
+              <div className="flex flex-col">
+                <div className="flex items-center gap-2 text-[#008B8B] mb-0.5">
+                  <Users size={18} strokeWidth={2.5} />
+                  <span className="text-[22px] font-extrabold text-[#102A43]">2M+</span>
+                </div>
+                <span className="text-[11px] text-slate-500 font-bold tracking-wide ml-[26px]">Happy Patients</span>
+              </div>
+            </div>
             
-            <div className="flex flex-wrap items-center gap-4 mt-4">
-              <button className="bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] text-white text-base font-medium px-8 py-3.5 rounded-md transition-colors shadow-lg shadow-blue-500/25">
-                Book Appointment
-              </button>
-              <button className="bg-white hover:bg-gray-50 text-[var(--color-primary)] border border-gray-200 text-base font-medium px-8 py-3.5 rounded-md transition-colors shadow-sm flex items-center gap-2">
-                <Search size={18} />
-                Find a Doctor
-              </button>
-            </div>
           </div>
-          
-          {/* Right Image/Graphic area */}
-          <div className="lg:w-1/2 relative h-[500px] flex justify-center items-end">
-            <div className="absolute w-[450px] h-[450px] bg-[var(--color-primary)] opacity-5 rounded-full top-10" />
-            <div className="absolute w-[350px] h-[350px] bg-[var(--color-primary)] opacity-10 rounded-full top-20" />
+
+          {/* Center Doctor Image */}
+          <div className="w-full lg:w-[25%] relative flex justify-center mt-12 lg:mt-0 z-10">
+            {/* Exact Teal Organic Blob shape from CarePlus */}
+            <div className="absolute top-[50%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[340px] h-[480px] text-[#008B8B] -z-10">
+              <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" className="w-full h-full transform -rotate-12 scale-110">
+                <path fill="currentColor" d="M44.7,-76.4C58.8,-69.2,71.8,-59.1,79.6,-46.1C87.4,-33.1,90,-16.5,88.4,-0.9C86.8,14.6,81,29.3,73.1,42.2C65.2,55.1,55.2,66.3,42.6,73.6C30,81,15,84.5,-0.2,84.9C-15.4,85.2,-30.8,82.4,-44.6,75.4C-58.4,68.4,-70.6,57.2,-78.9,43.7C-87.2,30.2,-91.6,15.1,-90.6,0.6C-89.6,-13.9,-83.2,-27.8,-74.6,-39.8C-66,-51.8,-55.2,-61.9,-42.6,-69.7C-30,-77.5,-15,-83.1,0.5,-83.9C16,-84.7,30.6,-83.6,44.7,-76.4Z" transform="translate(100 100)" />
+              </svg>
+            </div>
             
-            {/* Using a placeholder div for the doctor image to avoid missing asset errors */}
-            <div className="w-[400px] h-[480px] bg-slate-200 rounded-t-[200px] border-4 border-white shadow-xl relative overflow-hidden z-10 flex items-center justify-center text-slate-400">
-              [Doctor Image Placeholder]
-            </div>
+            {/* Transparent Doctor PNG */}
+            <img 
+              src="https://pngimg.com/uploads/doctor/doctor_PNG16035.png" 
+              alt="Doctor" 
+              className="w-full max-w-[360px] h-auto object-contain z-10 mt-10"
+            />
+          </div>
 
-            {/* Floating Card */}
-            <div className="absolute top-32 -right-8 bg-white p-4 rounded-xl shadow-[var(--shadow-card)] border border-gray-100 flex items-center gap-4 z-20 animate-bounce" style={{animationDuration: '3s'}}>
-              <div className="w-12 h-12 bg-red-50 rounded-full flex items-center justify-center">
-                <Phone className="text-[var(--color-danger)] w-6 h-6" />
+          {/* Right Floating Services Panel */}
+          <div className="w-full lg:w-[30%] flex justify-end mt-12 lg:mt-0 z-20">
+            <div className="bg-white rounded-[10px] shadow-[0_20px_50px_rgba(0,0,0,0.06)] p-5 w-full max-w-[380px] border border-slate-50">
+              
+              <div className="flex items-center justify-between p-3.5 hover:bg-slate-50 rounded-lg transition-colors cursor-pointer group mb-1">
+                <div className="flex items-center gap-4">
+                  <div className="w-11 h-11 bg-[#FFF0F0] text-[#FF6B6B] rounded-lg flex items-center justify-center transition-colors">
+                    <Phone size={22} strokeWidth={2} />
+                  </div>
+                  <div>
+                    <h3 className="text-[15px] font-extrabold text-[#102A43]">24/7 Emergency</h3>
+                    <p className="text-[12px] text-slate-500 mt-0.5">Always here for you</p>
+                  </div>
+                </div>
+                <ChevronRight size={18} strokeWidth={2.5} className="text-slate-300 group-hover:text-[#008B8B] transition-colors" />
               </div>
-              <div>
-                <p className="text-xs text-gray-500 font-medium">24/7 Emergency Care</p>
-                <p className="text-sm font-bold text-[var(--color-text-dark)]">+91 98765 43210</p>
+
+              <div className="flex items-center justify-between p-3.5 hover:bg-slate-50 rounded-lg transition-colors cursor-pointer group mb-1">
+                <div className="flex items-center gap-4">
+                  <div className="w-11 h-11 bg-[#E8F8F5] text-[#008B8B] rounded-lg flex items-center justify-center transition-colors">
+                    <Video size={22} strokeWidth={2} />
+                  </div>
+                  <div>
+                    <h3 className="text-[15px] font-extrabold text-[#102A43]">Video Consultation</h3>
+                    <p className="text-[12px] text-slate-500 mt-0.5">Talk to a Doctor</p>
+                  </div>
+                </div>
+                <ChevronRight size={18} strokeWidth={2.5} className="text-slate-300 group-hover:text-[#008B8B] transition-colors" />
               </div>
+
+              <div className="flex items-center justify-between p-3.5 hover:bg-slate-50 rounded-lg transition-colors cursor-pointer group mb-1">
+                <div className="flex items-center gap-4">
+                  <div className="w-11 h-11 bg-[#F4F4FF] text-[#6366F1] rounded-lg flex items-center justify-center transition-colors">
+                    <Pill size={22} strokeWidth={2} />
+                  </div>
+                  <div>
+                    <h3 className="text-[15px] font-extrabold text-[#102A43]">Online Pharmacy</h3>
+                    <p className="text-[12px] text-slate-500 mt-0.5">Medicines at your door</p>
+                  </div>
+                </div>
+                <ChevronRight size={18} strokeWidth={2.5} className="text-slate-300 group-hover:text-[#008B8B] transition-colors" />
+              </div>
+
+              <div className="flex items-center justify-between p-3.5 hover:bg-slate-50 rounded-lg transition-colors cursor-pointer group">
+                <div className="flex items-center gap-4">
+                  <div className="w-11 h-11 bg-[#F0F7FF] text-[#3B82F6] rounded-lg flex items-center justify-center transition-colors">
+                    <FlaskConical size={22} strokeWidth={2} />
+                  </div>
+                  <div>
+                    <h3 className="text-[15px] font-extrabold text-[#102A43]">Lab Test</h3>
+                    <p className="text-[12px] text-slate-500 mt-0.5">Book Tests Online</p>
+                  </div>
+                </div>
+                <ChevronRight size={18} strokeWidth={2.5} className="text-slate-300 group-hover:text-[#008B8B] transition-colors" />
+              </div>
+
             </div>
           </div>
-        </div>
-      </div>
 
-      {/* Services Quick Bar */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 -mt-10 mb-8">
-        <div className="bg-white rounded-xl shadow-[var(--shadow-card)] p-2 border border-gray-100 flex flex-wrap lg:flex-nowrap items-center justify-between">
-          {[
-            { icon: Calendar, title: "Book Appointment", sub: "Easy & Fast", color: "text-blue-500" },
-            { icon: Search, title: "Find a Doctor", sub: "Search & Connect", color: "text-teal-500" },
-            { icon: Video, title: "Video Consultation", sub: "Talk to a Doctor", color: "text-purple-500" },
-            { icon: Phone, title: "Emergency", sub: "24/7 Service", color: "text-red-500" },
-            { icon: Activity, title: "Lab Test", sub: "Book Tests", color: "text-green-500" },
-            { icon: Heart, title: "Health Packages", sub: "Best Offers", color: "text-orange-500" },
-          ].map((item, idx) => (
-            <div key={idx} className="flex items-center gap-3 p-4 hover:bg-slate-50 cursor-pointer rounded-lg transition-colors flex-1 min-w-[150px]">
-              <item.icon className={`${item.color} w-6 h-6`} />
-              <div>
-                <p className="text-sm font-bold text-[var(--color-text-dark)] leading-tight">{item.title}</p>
-                <p className="text-xs text-[var(--color-text-muted)]">{item.sub}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Stats Bar */}
-      <div className="bg-[var(--color-primary)] py-8 mt-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-wrap md:flex-nowrap items-center justify-between text-white gap-8">
-          <div className="flex flex-col items-center flex-1">
-            <span className="text-4xl font-bold">25+</span>
-            <span className="text-sm font-medium text-blue-100 mt-1">Years of Excellence</span>
-          </div>
-          <div className="w-px h-12 bg-white/20 hidden md:block" />
-          <div className="flex flex-col items-center flex-1">
-            <span className="text-4xl font-bold">1,500+</span>
-            <span className="text-sm font-medium text-blue-100 mt-1">Expert Doctors</span>
-          </div>
-          <div className="w-px h-12 bg-white/20 hidden md:block" />
-          <div className="flex flex-col items-center flex-1">
-            <span className="text-4xl font-bold">2M+</span>
-            <span className="text-sm font-medium text-blue-100 mt-1">Happy Patients</span>
-          </div>
-          <div className="w-px h-12 bg-white/20 hidden md:block" />
-          <div className="flex flex-col items-center flex-1">
-            <span className="text-4xl font-bold">15+</span>
-            <span className="text-sm font-medium text-blue-100 mt-1">Hospitals</span>
-          </div>
-          <div className="w-px h-12 bg-white/20 hidden md:block" />
-          <div className="flex flex-col items-center flex-1">
-            <span className="text-4xl font-bold">50+</span>
-            <span className="text-sm font-medium text-blue-100 mt-1">Awards & Honors</span>
-          </div>
         </div>
       </div>
     </div>
