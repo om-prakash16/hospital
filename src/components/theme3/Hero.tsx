@@ -1,5 +1,6 @@
 'use client';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 export default function Hero() {
   return (
@@ -30,9 +31,9 @@ export default function Hero() {
             </p>
             
             <div className="flex gap-3 mt-6">
-              <button className="bg-white text-[#0284c7] px-6 py-3 rounded-xl font-semibold hover:-translate-y-0.5 transition-transform duration-300 shadow-md">
+              <Link href="/services" className="bg-white text-[#0284c7] px-6 py-3 rounded-xl font-semibold hover:-translate-y-0.5 transition-transform duration-300 shadow-md">
                 View Services
-              </button>
+              </Link>
             </div>
             
             {/* Rating Box */}

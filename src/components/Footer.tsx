@@ -1,107 +1,104 @@
 import Link from 'next/link';
-import { PlusSquare, Globe, MessageCircle, Share2, Rss, MapPin, Phone, Mail, ArrowRight } from 'lucide-react';
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0f172a] text-white pt-20 pb-8">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+    <footer className="bg-white pt-12 md:pt-16 pb-6 border-t border-gray-100">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-wrap -mx-4 mb-10">
           
-          {/* Brand & About */}
-          <div className="md:col-span-1 pr-4">
-            <Link href="/" className="flex items-center gap-3 mb-6">
-              <img src="/shubham_logo.png" alt="Logo" className="w-12 h-12 rounded-md object-contain bg-white" />
-              <div className="flex flex-col">
-                <span className="font-extrabold text-2xl tracking-tight leading-none text-white">SHUBHAM HOSPITAL</span>
-                <span className="text-[10px] uppercase font-bold tracking-widest text-[#297AFF] mt-1">Dr. Ashok Gupta, Rohini</span>
+          {/* Brand & Intro */}
+          <div className="w-full lg:w-1/4 px-4 mb-8 lg:mb-0">
+            <div className="flex items-center gap-3 mb-4">
+              <img src="/shubham_logo.png" alt="Logo" className="w-12 h-12 rounded-md object-contain" />
+              <div className="flex flex-col text-[#0284c7]">
+                <span className="font-bold text-2xl leading-tight text-gray-900">SHUBHAM HOSPITAL</span>
+                <span className="font-semibold text-xs tracking-wider uppercase text-[#38bdf8]">Dr. Ashok Gupta, Rohini</span>
               </div>
-            </Link>
-            <p className="text-slate-400 text-sm mb-6 leading-relaxed">
-              Providing world-class healthcare with advanced technology and a team of expert doctors dedicated to your well-being since 1998.
+            </div>
+            <p className="text-gray-500 text-sm leading-relaxed mb-6 pr-4">
+              Providing premium medical care and comprehensive solutions to help you achieve a healthy life.
             </p>
-            <div className="flex items-center gap-3">
-              {[Globe, MessageCircle, Share2, Rss].map((Icon, idx) => (
-                <a key={idx} href="#" className="w-10 h-10 rounded-lg bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-400 hover:text-white hover:bg-[var(--color-primary)] hover:border-[var(--color-primary)] transition-all shadow-sm">
-                  <Icon size={16} />
-                </a>
-              ))}
+            
+            {/* Social Icons */}
+            <div className="flex gap-3">
+              <a href="#" className="w-9 h-9 rounded-full bg-[#f5f6ff] text-[#0284c7] flex items-center justify-center hover:bg-[#0284c7] hover:text-white transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3" /></svg>
+              </a>
+              <a href="#" className="w-9 h-9 rounded-full bg-[#f5f6ff] text-[#0284c7] flex items-center justify-center hover:bg-[#0284c7] hover:text-white transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 4l11.733 16h4.267l-11.733 -16z" /><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772" /></svg>
+              </a>
+              <a href="#" className="w-9 h-9 rounded-full bg-[#f5f6ff] text-[#0284c7] flex items-center justify-center hover:bg-[#0284c7] hover:text-white transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 4m0 4a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z" /><path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" /><path d="M16.5 7.5l0 .01" /></svg>
+              </a>
             </div>
           </div>
 
           {/* Quick Links */}
-          <div>
-            <h3 className="text-base font-bold mb-6 relative pl-4 before:absolute before:left-0 before:top-0.5 before:bottom-0.5 before:w-1 before:bg-[var(--color-primary)] before:rounded-full">Quick Links</h3>
-            <ul className="space-y-3">
-              {[
-                { label: 'Home', href: '/' },
-                { label: 'About Us', href: '/about' },
-                { label: 'Our Doctors', href: '/doctors' },
-                { label: 'Departments', href: '/departments' },
-                { label: 'Services', href: '/services' },
-                { label: 'Contact Us', href: '/contact' },
-              ].map((link, idx) => (
-                <li key={idx}>
-                  <Link href={link.href} className="text-sm text-slate-400 hover:text-white hover:pl-2 transition-all flex items-center gap-2 group">
-                    <ArrowRight size={12} className="opacity-0 group-hover:opacity-100 transition-opacity" />
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
+          <div className="w-1/2 lg:w-1/4 px-4 mb-8 lg:mb-0">
+            <h5 className="font-bold text-gray-900 mb-4 text-lg">Quick Links</h5>
+            <ul className="list-none p-0 m-0 space-y-2">
+              <li><Link href="/about" className="text-gray-500 hover:text-[#0284c7] text-sm transition-colors">About Us</Link></li>
+              <li><Link href="/doctors" className="text-gray-500 hover:text-[#0284c7] text-sm transition-colors">Our Doctors</Link></li>
+              <li><Link href="/book" className="text-gray-500 hover:text-[#0284c7] text-sm transition-colors">Appointments</Link></li>
+              <li><Link href="/services" className="text-gray-500 hover:text-[#0284c7] text-sm transition-colors">Services</Link></li>
+              <li><Link href="/contact" className="text-gray-500 hover:text-[#0284c7] text-sm transition-colors">Contact</Link></li>
             </ul>
           </div>
 
-          {/* Services */}
-          <div>
-            <h3 className="text-base font-bold mb-6 relative pl-4 before:absolute before:left-0 before:top-0.5 before:bottom-0.5 before:w-1 before:bg-[var(--color-primary)] before:rounded-full">Our Services</h3>
-            <ul className="space-y-3">
-              {['Cardiology', 'Neurology', 'Orthopedics', 'Pediatrics', 'Oncology', 'Dermatology'].map((link, idx) => (
-                <li key={idx}>
-                  <Link href="/departments" className="text-sm text-slate-400 hover:text-white hover:pl-2 transition-all flex items-center gap-2 group">
-                    <ArrowRight size={12} className="opacity-0 group-hover:opacity-100 transition-opacity" />
-                    {link}
-                  </Link>
-                </li>
-              ))}
+          {/* Contact */}
+          <div className="w-1/2 lg:w-1/4 px-4 mb-8 lg:mb-0">
+            <h5 className="font-bold text-gray-900 mb-4 text-lg">Contact</h5>
+            <ul className="list-none p-0 m-0 space-y-3">
+              <li className="flex items-start text-sm text-gray-600">
+                <span className="text-[#0284c7] mr-2 mt-0.5">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2" /></svg>
+                </span>
+                +91 9811124446
+              </li>
+              <li className="flex items-start text-sm text-gray-600">
+                <span className="text-[#0284c7] mr-2 mt-0.5">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z" /><path d="M3 7l9 6l9 -6" /></svg>
+                </span>
+                info@shubhamhospital.com
+              </li>
+              <li className="flex items-start text-sm text-gray-600">
+                <span className="text-[#0284c7] mr-2 mt-0.5">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 11a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" /><path d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0z" /></svg>
+                </span>
+                Rohini, Delhi
+              </li>
             </ul>
           </div>
 
-          {/* Contact Info */}
-          <div>
-            <h3 className="text-base font-bold mb-6 relative pl-4 before:absolute before:left-0 before:top-0.5 before:bottom-0.5 before:w-1 before:bg-[var(--color-primary)] before:rounded-full">Contact Info</h3>
-            <ul className="space-y-5">
-              <li className="flex items-start gap-3 text-sm text-slate-400">
-                <div className="w-9 h-9 bg-slate-800 rounded-lg flex items-center justify-center shrink-0">
-                  <MapPin className="text-[var(--color-primary)]" size={16} />
-                </div>
-                <span className="pt-1.5">123 Health Avenue, Medical District, New York, NY 10001</span>
-              </li>
-              <li className="flex items-center gap-3 text-sm text-slate-400">
-                <div className="w-9 h-9 bg-slate-800 rounded-lg flex items-center justify-center shrink-0">
-                  <Phone className="text-[var(--color-primary)]" size={16} />
-                </div>
-                <span>+1 (800) 123-4567</span>
-              </li>
-              <li className="flex items-center gap-3 text-sm text-slate-400">
-                <div className="w-9 h-9 bg-slate-800 rounded-lg flex items-center justify-center shrink-0">
-                  <Mail className="text-[var(--color-primary)]" size={16} />
-                </div>
-                <span>contact@medicareplus.com</span>
-              </li>
-            </ul>
+          {/* Newsletter */}
+          <div className="w-full lg:w-1/4 px-4">
+            <h5 className="font-bold text-gray-900 mb-4 text-lg">Newsletter</h5>
+            <p className="text-sm text-gray-500 mb-4">Subscribe to receive latest tips.</p>
+            <form className="flex gap-2">
+              <input 
+                type="email" 
+                placeholder="Your email" 
+                className="w-full h-10 px-3 border border-gray-200 rounded-lg focus:outline-none focus:border-[#0284c7] text-sm transition-colors"
+              />
+              <button 
+                type="button" 
+                className="h-10 px-4 rounded-lg text-white font-medium text-sm transition-colors shrink-0"
+                style={{ background: 'linear-gradient(135deg, #0284c7, #0284c7)' }}
+              >
+                Send
+              </button>
+            </form>
           </div>
+
         </div>
 
         {/* Copyright */}
-        <div className="border-t border-slate-800 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-sm text-slate-500">
-            &copy; {new Date().getFullYear()} Medicare+. All rights reserved.
+        <div className="text-center pt-6 border-t border-gray-100 mt-6">
+          <p className="text-sm text-gray-500 mb-0">
+            &copy; 2026 Shubham Hospital. All rights reserved.
           </p>
-          <div className="flex items-center gap-6 text-sm text-slate-500">
-            <Link href="#" className="hover:text-white transition-colors">Privacy Policy</Link>
-            <Link href="#" className="hover:text-white transition-colors">Terms of Service</Link>
-            <Link href="#" className="hover:text-white transition-colors">FAQ</Link>
-          </div>
         </div>
+        
       </div>
     </footer>
   );

@@ -1,28 +1,24 @@
 'use client';
 
-import Link from 'next/link';
+import PageHero from '@/components/PageHero';
 
 export default function BookAppointment() {
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
-      <div className="sm:mx-auto sm:w-full sm:max-w-md">
-        <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
-          Book an Appointment
-        </h2>
-        <p className="mt-2 text-center text-sm text-gray-600">
-          Shubham Hospital - Dr. Ashok Gupta, Rohini
-        </p>
-      </div>
+    <div className="min-h-screen bg-[#f3f4fb] font-sans flex flex-col">
+      <PageHero 
+        title="Book an Appointment" 
+        description="Schedule your visit at Shubham Hospital - Dr. Ashok Gupta, Rohini"
+      />
 
-      <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
-        <div className="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
+      <div className="flex-1 w-full max-w-2xl mx-auto px-4 py-12">
+        <div className="bg-white py-10 px-6 shadow-sm border border-gray-100 rounded-3xl sm:px-12">
           <form className="space-y-6" action="#" method="POST">
             <div>
               <label htmlFor="name" className="block text-sm font-medium text-gray-700">
                 Full Name
               </label>
               <div className="mt-1">
-                <input id="name" name="name" type="text" required className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" />
+                <input id="name" name="name" type="text" required className="appearance-none block w-full px-4 py-3 border border-gray-200 bg-[#f9fafb] rounded-xl placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#0ea5e9] sm:text-sm transition-all" />
               </div>
             </div>
 
@@ -31,7 +27,7 @@ export default function BookAppointment() {
                 Phone Number
               </label>
               <div className="mt-1">
-                <input id="phone" name="phone" type="tel" required className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" />
+                <input id="phone" name="phone" type="tel" required className="appearance-none block w-full px-4 py-3 border border-gray-200 bg-[#f9fafb] rounded-xl placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#0ea5e9] sm:text-sm transition-all" />
               </div>
             </div>
             
@@ -40,7 +36,7 @@ export default function BookAppointment() {
                 Preferred Date
               </label>
               <div className="mt-1">
-                <input id="date" name="date" type="date" required className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" />
+                <input id="date" name="date" type="date" required className="appearance-none block w-full px-4 py-3 border border-gray-200 bg-[#f9fafb] rounded-xl placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#0ea5e9] sm:text-sm transition-all" />
               </div>
             </div>
 
@@ -49,7 +45,7 @@ export default function BookAppointment() {
                 Department
               </label>
               <div className="mt-1">
-                <select id="department" name="department" className="block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm rounded-md">
+                <select id="department" name="department" className="appearance-none block w-full px-4 py-3 border border-gray-200 bg-[#f9fafb] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#0ea5e9] sm:text-sm transition-all">
                   <option>General Consultation</option>
                   <option>Cardiology</option>
                   <option>Pediatrics</option>
@@ -58,24 +54,13 @@ export default function BookAppointment() {
               </div>
             </div>
 
-            <div>
-              <button type="submit" className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+            <div className="pt-4">
+              <button type="submit" className="w-full flex justify-center py-4 px-4 border border-transparent shadow-md text-sm font-bold rounded-xl text-white bg-[#0ea5e9] hover:bg-[#0284c7] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#0ea5e9] transition-colors">
                 Confirm Appointment
               </button>
             </div>
           </form>
           
-          <div className="mt-6 flex gap-4">
-            <Link href="/" className="w-full flex justify-center py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50">
-              Back to Theme 1
-            </Link>
-            <Link href="/theme3" className="w-full flex justify-center py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50">
-              Theme 3
-            </Link>
-            <Link href="/theme4" className="w-full flex justify-center py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50">
-              Theme 4
-            </Link>
-          </div>
         </div>
       </div>
     </div>

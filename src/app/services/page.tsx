@@ -1,3 +1,4 @@
+import PageHero from '@/components/PageHero';
 import { Calendar, Search, Video, Phone, Activity, Heart, Shield, FileText } from 'lucide-react';
 
 export default function ServicesPage() {
@@ -13,25 +14,21 @@ export default function ServicesPage() {
   ];
 
   return (
-    <div className="flex flex-col min-h-screen bg-[var(--color-surface)]">
-      <div className="bg-[var(--color-primary)]/10 py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl font-bold text-[var(--color-text-dark)] mb-4">Our Services</h1>
-          <p className="text-lg text-[var(--color-text-muted)] max-w-2xl mx-auto">
-            Comprehensive healthcare services designed around your needs.
-          </p>
-        </div>
-      </div>
+    <div className="flex flex-col min-h-screen bg-[#f3f4fb] font-sans">
+      <PageHero 
+        title="Our Services" 
+        description="Comprehensive healthcare services designed around your needs."
+      />
       
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full">
+      <div className="container mx-auto px-4 py-20 w-full">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {services.map((item, idx) => (
-            <div key={idx} className="bg-[var(--color-background)] p-8 border border-[var(--color-border)] transition-all hover:-translate-y-1" style={{ borderRadius: 'var(--radius-lg)', boxShadow: 'var(--shadow-card)' }}>
-              <div className="w-14 h-14 bg-[var(--color-primary)]/10 rounded-full flex items-center justify-center mb-6">
-                <item.icon className="text-[var(--color-primary)] w-7 h-7" />
+            <div key={idx} className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 transition-all hover:-translate-y-1 hover:shadow-md">
+              <div className="w-14 h-14 bg-[#e0f2fe] rounded-full flex items-center justify-center mb-6">
+                <item.icon className="text-[#0284c7] w-7 h-7" />
               </div>
-              <h3 className="text-xl font-bold text-[var(--color-text-dark)] mb-3">{item.title}</h3>
-              <p className="text-[var(--color-text-muted)] leading-relaxed">{item.desc}</p>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">{item.title}</h3>
+              <p className="text-gray-500 leading-relaxed">{item.desc}</p>
             </div>
           ))}
         </div>
