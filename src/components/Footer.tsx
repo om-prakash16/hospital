@@ -9,7 +9,8 @@ export default function Footer() {
           
           {/* Brand & About */}
           <div className="md:col-span-1 pr-4">
-            <Link href="/" className="flex items-center gap-2 mb-6">
+            <Link href="/" className="flex items-center gap-3 mb-6">
+              <img src="/shubham_logo.png" alt="Logo" className="w-12 h-12 rounded-md object-contain bg-white" />
               <div className="flex flex-col">
                 <span className="font-extrabold text-2xl tracking-tight leading-none text-white">SHUBHAM HOSPITAL</span>
                 <span className="text-[10px] uppercase font-bold tracking-widest text-[#297AFF] mt-1">Dr. Ashok Gupta, Rohini</span>

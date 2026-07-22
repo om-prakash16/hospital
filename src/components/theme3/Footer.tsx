@@ -8,9 +8,12 @@ export default function Footer() {
           
           {/* Brand & Intro */}
           <div className="w-full lg:w-1/4 px-4 mb-8 lg:mb-0">
-            <div className="flex flex-col text-[#0284c7] mb-4">
-              <span className="font-bold text-2xl leading-tight text-gray-900">SHUBHAM HOSPITAL</span>
-              <span className="font-semibold text-xs tracking-wider uppercase text-[#38bdf8]">Dr. Ashok Gupta, Rohini</span>
+            <div className="flex items-center gap-3 mb-4">
+              <img src="/shubham_logo.png" alt="Logo" className="w-12 h-12 rounded-md object-contain" />
+              <div className="flex flex-col text-[#0284c7]">
+                <span className="font-bold text-2xl leading-tight text-gray-900">SHUBHAM HOSPITAL</span>
+                <span className="font-semibold text-xs tracking-wider uppercase text-[#38bdf8]">Dr. Ashok Gupta, Rohini</span>
+              </div>
             </div>
             <p className="text-gray-500 text-sm leading-relaxed mb-6 pr-4">
               Providing premium dental care and aesthetic solutions to help you smile with confidence.

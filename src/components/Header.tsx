@@ -9,8 +9,10 @@ export default function Header() {
           
           {/* Logo Section */}
           <Link href="/" className="flex items-center gap-3">
-            <div className="flex flex-col">
-              <span className="font-bold text-xl leading-tight text-[#0F2D5E]">SHUBHAM HOSPITAL</span>
+            <div className="flex items-center gap-2">
+              <img src="/shubham_logo.png" alt="Logo" className="w-10 h-10 rounded-md object-contain" />
+              <div className="flex flex-col">
+                <span className="font-bold text-xl leading-tight text-[#0F2D5E]">SHUBHAM HOSPITAL</span>
               <span className="font-semibold text-xs tracking-wider uppercase text-[#297AFF]">Dr. Ashok Gupta, Rohini</span>
             </div>
           </Link>

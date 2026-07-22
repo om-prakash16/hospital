@@ -9,7 +9,10 @@ export default function Footer() {
         <div className="flex flex-wrap -mx-4">
           
           <div className="w-full lg:w-1/4 px-4 mb-10 lg:mb-0">
-            <h2 className="text-2xl font-bold text-white mb-2 leading-tight">SHUBHAM HOSPITAL</h2>
+            <div className="flex items-center gap-3 mb-2">
+              <img src="/shubham_logo.png" alt="Logo" className="w-12 h-12 rounded-md object-contain bg-white/10" />
+              <h2 className="text-2xl font-bold text-white mb-0 leading-tight">SHUBHAM HOSPITAL</h2>
+            </div>
             <p className="text-sm font-semibold text-[#FF8D6D] mb-4 tracking-wider uppercase">Dr. Ashok Gupta, Rohini</p>
             <p className="text-base text-gray-400">
               Empowering healthcare providers with modern, secure, and intuitive digital clinic tools.
