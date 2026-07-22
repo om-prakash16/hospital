@@ -22,7 +22,7 @@ export default function Hero() {
             </div>
 
             {/* Headline */}
-            <h1 className="text-[52px] lg:text-[64px] font-extrabold text-[#102A43] leading-[1.1] mb-6 tracking-tight">
+            <h1 className="text-4xl sm:text-5xl md:text-[52px] lg:text-[64px] font-extrabold text-[#102A43] leading-[1.15] mb-6 tracking-tight break-words">
               Compassionate <br/>
               Care <br/>
               For a <span className="text-[#008B8B]">Healthier You</span>

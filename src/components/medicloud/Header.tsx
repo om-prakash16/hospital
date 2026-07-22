@@ -13,6 +13,7 @@ export default function Header() {
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <Link href="/medicloud" className="flex items-center gap-2">
+            <img src="/shubham_logo.png" alt="Logo" className="w-10 h-10 rounded-md object-contain" />
             <div className="flex flex-col">
               <span className="font-bold text-xl text-[#003A43] leading-tight">SHUBHAM HOSPITAL</span>
               <span className="font-semibold text-xs text-[#FF8D6D] tracking-wider uppercase">Dr. Ashok Gupta, Rohini</span>

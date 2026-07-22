@@ -19,6 +19,7 @@ export function Header() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <nav className="flex items-center justify-between py-4 md:py-6">
           <Link href="/theme4" className="mr-6 flex items-center space-x-2 text-[#0284c7]">
+            <img src="/shubham_logo.png" alt="Logo" className="w-10 h-10 rounded-md object-contain" />
             <div className="flex flex-col">
               <span className="font-bold text-xl leading-tight">SHUBHAM HOSPITAL</span>
               <span className="font-semibold text-xs tracking-wider uppercase text-[#38bdf8]">Dr. Ashok Gupta, Rohini</span>
